@@ -1,0 +1,4 @@
+objective = "Formalize the agent operational framework."
+description = "Create CRQ_Agent_Operational_Framework.md and document the bootstrapping, task claiming, and `tmux`-driven workflow."
+assigned_agent = "(Unassigned)"
+status = "To Do"
