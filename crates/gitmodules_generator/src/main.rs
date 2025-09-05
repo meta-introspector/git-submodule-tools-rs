@@ -1,8 +1,7 @@
 use std::io::{self, BufRead};
 use url::Url;
-use std::collections::HashMap;
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 enum Topic {
     AiMl,
     BlockchainWeb3,
@@ -66,14 +65,17 @@ fn categorize_topic(org: &str, name: &str) -> Topic {
         "qfall" => Topic::SecurityCrypto,
         "salsa.debian.org" => Topic::Bootstrapping, // Reproducible Builds often tied to bootstrapping
         "HoTT" | "UniMath" => Topic::CompilersFormalMethods, // Homotopy Type Theory
-        "torvalds" => Topic::Infrastructure, // Linux Kernel
+        "torvalds" => Topic::Infrastructure,        // Linux Kernel
         "gcc-mirror" => Topic::CompilersFormalMethods, // GCC
-        "bminor" => Topic::Tooling, // Binutils/GDB
+        "bminor" => Topic::Tooling,                 // Binutils/GDB
         "systemd" => Topic::SystemInit,
         "qemu" => Topic::Virtualization,
         "astral-sh" => Topic::Tooling, // Python Tooling
         "open-telemetry" => Topic::Telemetry,
-        "maximegmd" | "Souldiv" | "MeticulousHome" | "MyJetTools" | "jaedson-barbosa" | "carlos-menezes" | "eeeeeta" | "goto-eof" | "thmshmm" | "0x20F" | "JimitSoni18" => Topic::Telemetry,
+        "maximegmd" | "Souldiv" | "MeticulousHome" | "MyJetTools" | "jaedson-barbosa"
+        | "carlos-menezes" | "eeeeeta" | "goto-eof" | "thmshmm" | "0x20F" | "JimitSoni18" => {
+            Topic::Telemetry
+        }
         "goldpuppy" => Topic::WebDevelopment,
         "coccinelle" => Topic::StaticAnalysis,
         "a-ghorbani" => Topic::Misc,
@@ -169,7 +171,10 @@ fn main() -> io::Result<()> {
                     url: trimmed_line.to_string(),
                 });
             } else {
-                eprintln!("Warning: Could not parse organization/name from URL: {}", trimmed_line);
+                eprintln!(
+                    "Warning: Could not parse organization/name from URL: {}",
+                    trimmed_line
+                );
             }
         } else {
             eprintln!("Warning: Could not parse line as URL: {}", trimmed_line);

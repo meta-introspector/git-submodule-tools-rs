@@ -4,5 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-regex = "1.5"
-walkdir = "2.3"
+gix-config = { path = "../../vendor/gitoxide/gix-config" }
+gix-url = { path = "../../vendor/gitoxide/gix-url" }
+gix-discover = { path = "../../vendor/gitoxide/gix-discover" }
+bstr = "1.9.0"

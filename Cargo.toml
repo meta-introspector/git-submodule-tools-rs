@@ -1,0 +1,14 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/git_repo_analyzer",
+    "crates/gitmodules_generator",
+    "crates/cargo2submodule",
+    "crates/cargo_workspace_fixer",
+]
+
+[patch.crates-io]
+# This section is for vendoring dependencies. We will add entries here as needed.
+
+[workspace.lints]
+# Empty lints table to satisfy workspace members that expect it.
