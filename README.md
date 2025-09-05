@@ -76,6 +76,20 @@ Each tool is a standalone CLI application. Refer to their respective help messag
 ./target/release/cargo_workspace_fixer --help
 ```
 
+## Utility Scripts
+
+This project includes a set of utility bash scripts to assist with various development and operational tasks, particularly related to `tmux` session management and model interaction.
+
+*   **`launch_pro_oneshot.sh`**: Launches the `gemini-2.5-pro` model in a new `tmux` pane with a specific prompt for one-shot testing. The prompt content is sourced from `prompts/pro_oneshot_task.md`.
+*   **`attach_and_show_pro_pane.sh`**: Attaches to the `gemini-agent-session` `tmux` session and attempts to select and display the pane where the "pro" model is running.
+*   **`find_tmux_pane.sh`**: Iterates through all `tmux` panes in the `gemini-agent-session`, displays their content, and allows for manual stopping.
+*   **`report_tmux_panes.sh`**: Iterates through all `tmux` panes in the `gemini-agent-session`, selects each one, reports on the active pane, and displays its content.
+*   **`report_current_tmux_pane.sh`**: Reports on the currently active `tmux` pane and displays its content without cycling.
+
+### Prompts Directory
+
+The `prompts/` directory stores reusable prompt content for various model interactions, such as `prompts/pro_oneshot_task.md`.
+
 ## Contributing
 
 Contributions are welcome! Please ensure your contributions align with the project's quality standards and methodologies. When using AI tooling for code generation, please disclose its use as per our contributing guidelines.
