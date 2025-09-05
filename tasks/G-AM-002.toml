@@ -1,0 +1,17 @@
+id = "G-AM-002"
+category = "Agent Management & Automation"
+objective = "Implement a task completion verification system."
+description = """Develop a Rust program or script that can check if a task's acceptance criteria have been met before marking it as "Done." This could involve running tests, checking file existence, analyzing code changes, or parsing output logs."""
+scope = """
+New Rust crate (`crates/task_verifier`) or a shell script, integration with task definitions.
+*   **Acceptance Criteria:**
+*   The `task_verifier` can be invoked for a specific task ID.
+*   It correctly assesses whether the task's acceptance criteria are met.
+*   It provides a clear pass/fail result.
+*   It can update the task's `Status` to `Done` if criteria are met."""
+acceptance_criteria = ""
+dependencies = "Access to project files, test frameworks, and potentially Git history."
+assigned_agent = "(Unassigned)"
+status = "To Do"
+notes = "This task will require careful definition of how acceptance criteria are programmatically verifiable."
+injected_context_cacheline = "⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬📦✨💾"

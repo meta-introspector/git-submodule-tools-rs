@@ -1,0 +1,17 @@
+id = "G-QA-001"
+category = "Quality Assurance"
+objective = "Integrate `run_qa_tests.sh` into a continuous integration (CI) pipeline."
+description = "Set up a basic CI workflow (e.g., using GitHub Actions) that automatically executes `docs/qa/git_repo_management/run_qa_tests.sh` on every push to the main branch and pull requests."
+scope = """
+`.github/workflows/` directory (new YAML file), potential minor adjustments to `run_qa_tests.sh` for CI environment compatibility.
+*   **Acceptance Criteria:**
+*   CI workflow is successfully configured and runs automatically.
+*   Builds and tests pass in the CI environment.
+*   Test results are reported clearly in the CI system."""
+acceptance_criteria = ""
+dependencies = "None (requires GitHub repository access for setup)."
+assigned_agent = "(Unassigned)"
+status = "To Do"
+notes = "Start with a minimal workflow and expand as needed."
+parent_crq = "G-CRQ-001"
+injected_context_cacheline = "⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬📦✨💾"

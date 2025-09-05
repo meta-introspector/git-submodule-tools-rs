@@ -1,0 +1,18 @@
+id = "G-FD-002"
+category = "Feature Development"
+objective = "Enhance `gitmodules_generator` to support custom categorization rules via a configuration file."
+description = "Modify `gitmodules_generator` to allow users to define their own rules for categorizing repositories (e.g., based on URL patterns, keywords in descriptions) in a TOML or YAML configuration file, rather than hardcoding them in `main.rs`."
+scope = """
+`crates/gitmodules_generator` (modifying `main.rs` and adding a configuration parsing module), update `Cargo.toml` for new dependencies (e.g., `serde_yaml` if chosen).
+*   **Acceptance Criteria:**
+*   `gitmodules_generator` successfully reads and applies custom categorization rules from a user-provided configuration file.
+*   Default categorization logic remains functional if no custom file is provided.
+*   Comprehensive unit tests for configuration parsing and rule application.
+*   Documentation (`docs/`) includes examples of custom categorization configuration."""
+acceptance_criteria = ""
+dependencies = "`toml` (already present) or `serde_yaml` (new)."
+assigned_agent = "(Unassigned)"
+status = "To Do"
+notes = "Ensure clear error handling for malformed configuration files."
+parent_crq = "G-CRQ-001"
+injected_context_cacheline = "⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬📦✨💾"

@@ -1,0 +1,18 @@
+id = "G-DA-001"
+category = "Documentation & Architecture"
+objective = "Create C4 Model diagrams for each core crate (`git_repo_analyzer`, `gitmodules_generator`, `cargo2submodule`, `cargo_workspace_fixer`)."
+description = "Develop C4 Model diagrams (Context, Container, Component, Code) for each of the primary Rust crates, illustrating their architecture, dependencies, and interactions. These diagrams should be stored in the `docs/` directory."
+scope = """
+`docs/` directory, potentially requiring new tooling for diagram generation (e.g., PlantUML, Mermaid).
+*   **Acceptance Criteria:**
+*   At least Context and Container diagrams are provided for each crate.
+*   Diagrams are clear, accurate, and follow C4 Model conventions.
+*   Diagram source files are version-controlled alongside the generated images.
+*   `README.md` is updated to link to these new architectural documents."""
+acceptance_criteria = ""
+dependencies = "None (tooling choice is part of the task)."
+assigned_agent = "(Unassigned)"
+status = "To Do"
+notes = "Prioritize diagrams for the most complex or interconnected crates first."
+parent_crq = "G-CRQ-001"
+injected_context_cacheline = "⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬📦✨💾"

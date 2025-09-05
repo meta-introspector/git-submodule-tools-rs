@@ -1,0 +1,25 @@
+id = "G-FD-001"
+category = "Feature Development"
+objective = "Implement a new `git-submodule-tools` command to perform comprehensive submodule health checks."
+description = """
+Develop a new binary, `git_submodule_health_checker`, that can identify common issues in Git submodules, such as:
+*   Uninitialized submodules.
+*   Submodules pointing to non-existent or inaccessible remotes.
+*   Dirty submodules (uncommitted changes).
+*   Submodules not on the expected commit/branch.
+*   Submodules with detached HEAD."""
+scope = """
+New Rust crate (`crates/git_submodule_health_checker`), integration into the main `Cargo.toml`, and relevant documentation updates.
+*   **Acceptance Criteria:**
+*   New `git_submodule_health_checker` binary is built successfully.
+*   The command provides clear, actionable output for each identified issue.
+*   Unit tests cover core logic for each health check.
+*   Integration tests verify the tool's functionality against various problematic submodule scenarios.
+*   A dedicated section in `README.md` and `docs/` explains its usage and capabilities."""
+acceptance_criteria = ""
+dependencies = "`git_repo_analyzer` (for repository discovery), `gix-submodule` (from vendor/gitoxide)."
+assigned_agent = "(Unassigned)"
+status = "To Do"
+notes = "Consider performance implications for large repositories with many submodules."
+parent_crq = "G-CRQ-001"
+injected_context_cacheline = "⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬⬛​⚪⁠✌️​ ত্রি⁠🖐️​⚹⁠🧮​🍀⁠⚡​🌌⁠🧬📦✨💾"
