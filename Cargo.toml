@@ -10,7 +10,15 @@ members = [
 ]
 
 [patch.crates-io]
-# This section is for vendoring dependencies. We will add entries here as needed.
+tmux_controller = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/tmux_controller" }
+dump_tmux_status = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/dump_tmux_status" }
+tmux_interface = { path = "../rustc/crates/introspector/vendor/libminizinc/vendor/tmux_interface" }
+asciicast_processor = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/asciicast_processor" }
+grex = { path = "../rustc/crates/introspector/vendor/libminizinc/vendor/grex" }
+poem_macro_impl = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/poem_macro_impl" }
+gemini_utils = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/gemini_utils" }
+poem_macros = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/poem_macros" }
+kantspel_lib = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/kantspel_lib" }
 
 [workspace.lints]
 # Empty lints table to satisfy workspace members that expect it.
