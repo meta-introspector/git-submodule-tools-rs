@@ -1,0 +1,8 @@
+[package]
+name = "zos_initializer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gix = { path = "../../vendor/gitoxide/gix" }
+tempfile = "3.10.1"

@@ -1,0 +1,10 @@
+[package]
+name = "task_converter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+walkdir = "2.5.0"
+regex = "1.10.4"
+serde = { version = "1.0.197", features = ["derive"] }
+toml = "0.8.11"

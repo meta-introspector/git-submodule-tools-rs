@@ -5,6 +5,8 @@ members = [
     "crates/gitmodules_generator",
     "crates/cargo2submodule",
     "crates/cargo_workspace_fixer",
+    "crates/zos_initializer",
+    "crates/task_converter",
 ]
 
 [patch.crates-io]
