@@ -1,0 +1,7 @@
+docs: Update README with project context and workflows
+
+This commit enhances the README.md to provide a more comprehensive overview of the project's conceptual frameworks and operational workflows.
+
+- Introduced a new section for Conceptual Research Questions (CRQs), detailing the ongoing research and development initiatives.
+- Expanded the "Quality Assurance & Methodologies" section to include the Tmux-driven workflow, Asciinema integration for session recording, and the agent bootstrapping/task claiming process.
+- Added a "Meta-Narrative and AI Context" section to explain the project's unique meta-narrative elements and its perspective on Large Language Models (LLMs).

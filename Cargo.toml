@@ -7,6 +7,7 @@ members = [
     "crates/cargo_workspace_fixer",
     "crates/zos_initializer",
     "crates/task_converter",
+    "crates/cargo_crate_linker",
 ]
 
 [patch.crates-io]
