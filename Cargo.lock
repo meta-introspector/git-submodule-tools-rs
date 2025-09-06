@@ -3729,6 +3729,9 @@ dependencies = [
 name = "poem_analyzer"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
+ "chrono",
+ "git2",
  "regex",
  "walkdir",
 ]
