@@ -1,0 +1,7 @@
+Design conceptual GUI elements for a 'Chronos-Code Paradox Visualizer' application. Focus on elements that allow a user to:
+*   Toggle 'evolution' and 'decay' effects.
+*   Highlight specific 'lattice points' or 'edges'.
+*   Display metadata about selected points (e.g., 'code age', 'decay rate').
+*   Control the 'flow' of code visualization.
+*   Use a dark, futuristic theme with glowing accents.
+*   Include a 'Paradox Meter' showing the balance between creation and decay.

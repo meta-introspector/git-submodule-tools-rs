@@ -1,0 +1,1 @@
+Generate a CRQ for a new research objective: 'Quantifying the Chronos-Code Paradox'. The CRQ should propose a methodology for measuring the rates of code evolution and decay within the project's codebase, and how these metrics can be mapped onto the conceptual 'Lattice of Systems'. Include justification, acceptance criteria, and dependencies.

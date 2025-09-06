@@ -1,0 +1,5 @@
+Create video shot instructions for a 30-second segment explaining the 'Chronos-Code Paradox'.
+*   **Shot 1 (0-5s):** Close-up, macro view of glowing, intricate digital circuits, some lines vibrant, others flickering and fading. Slow, ethereal camera movement.
+*   **Shot 2 (5-10s):** Pull back to reveal a vast, abstract 'lattice of systems' – glowing nodes connected by lines, expanding into darkness. Camera slowly orbits the central lattice.
+*   **Shot 3 (10-20s):** Overlay text: 'Code Evolves. Code Decays.' with visual effects of growth and fragmentation on the lattice. Show a time-lapse effect on parts of the lattice, demonstrating rapid change.
+*   **Shot 4 (20-30s):** Return to a central, stable, but still dynamic part of the lattice. Voiceover text appears: 'The Chronos-Code Paradox.' End with a lingering shot on the interconnectedness.
