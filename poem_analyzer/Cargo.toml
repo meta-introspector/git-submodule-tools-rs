@@ -1,0 +1,11 @@
+[package]
+name = "poem_analyzer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+walkdir = "2.5.0"
+regex = "1.10.0"
+
+[lints]
+workspace = true

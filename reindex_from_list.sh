@@ -23,6 +23,7 @@ do
     extension="${filename##*.}"
     filename_no_ext="${filename%.*}"
     output_json_file="/data/data/com.termux/files/home/storage/github/reindexed_${filename_no_ext}.json"
+    status_log_file="/data/data/com.termux/files/home/storage/github/reindexed_${filename_no_ext}.log"
 
     # Define the base path to prepend
     BASE_PATH="/data/data/com.termux/files/home/storage/github/"
@@ -35,7 +36,7 @@ do
     done < "$input_file"
 
     # Run crate_indexer
-    "$CRATE_INDEXER_BIN" --input-file "$TEMP_INPUT_FILE" --output-file "$output_json_file"
+    "$CRATE_INDEXER_BIN" --input-file "$TEMP_INPUT_FILE" --output-file "$output_json_file" --status-log-file "$status_log_file"
     
     # Clean up the temporary file
     rm "$TEMP_INPUT_FILE"

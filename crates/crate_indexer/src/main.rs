@@ -25,6 +25,10 @@ struct Args {
     /// Path to the configuration file (optional).
     #[arg(short, long)]
     config_file: Option<PathBuf>,
+
+    /// Path to a file to log processed/errored files for resume functionality.
+    #[arg(long)]
+    status_log_file: Option<PathBuf>,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -72,6 +76,36 @@ fn main() -> Result<()> {
         }
     };
 
+    let mut status_log_file: Option<File> = None;
+    let mut processed_files: std::collections::HashSet<PathBuf> = std::collections::HashSet::new();
+
+    if let Some(status_path) = &args.status_log_file {
+        // Read existing status log for resume functionality
+        if status_path.exists() {
+            let file = File::open(status_path).context("Failed to open existing status log file")?;
+            let reader = io::BufReader::new(file);
+            for line in reader.lines() {
+                let line = line?;
+                if line.starts_with("PROCESSED:") {
+                    let path_str = line.trim_start_matches("PROCESSED:").trim();
+                    processed_files.insert(PathBuf::from(path_str));
+                } else if line.starts_with("ERROR:") {
+                    // We also want to skip files that previously errored
+                    let path_str = line.trim_start_matches("ERROR:").split_once(":").map(|(p, _)| p.trim()).unwrap_or("");
+                    processed_files.insert(PathBuf::from(path_str));
+                }
+            }
+        }
+        // Open in append mode for writing new status
+        status_log_file = Some(File::options().create(true).append(true).open(status_path).context("Failed to create/open status log file")?);
+    }
+
+    let mut status_log_message = |message: &str| {
+        if let Some(file) = &mut status_log_file {
+            writeln!(file, "{}", message).unwrap_or_else(|e| eprintln!("Failed to write to status log file: {}", e));
+        }
+    };
+
     println!("Crate Indexer started.");
     log_message(&format!("Crate Indexer started. Input file: {:?}", args.input_file));
 
@@ -86,6 +120,12 @@ fn main() -> Result<()> {
         let file_path_str = line.with_context(|| "Failed to read line from input file")?;
         let path = PathBuf::from(file_path_str);
 
+        // Skip if already processed
+        if processed_files.contains(&path) {
+            log_message(&format!("Skipping already processed: {:?}", path));
+            continue;
+        }
+
         if path.is_dir() {
             for entry in WalkDir::new(&path)
                 .into_iter()
@@ -93,22 +133,35 @@ fn main() -> Result<()> {
                 .filter(|e| e.file_name() == "Cargo.toml")
             {
                 let cargo_toml_path = entry.path().to_path_buf();
+                // Skip if already processed
+                if processed_files.contains(&cargo_toml_path) {
+                    log_message(&format!("Skipping already processed: {:?}", cargo_toml_path));
+                    continue;
+                }
                 match extract_crate_info(&cargo_toml_path, &project_root, &config) { // Pass config
-                    Ok(Some(info)) => all_crate_info.push(info),
+                    Ok(Some(info)) => {
+                        all_crate_info.push(info);
+                        status_log_message(&format!("PROCESSED: {:?}", cargo_toml_path));
+                    },
                     Ok(None) => {}, // Skipped
                     Err(e) => {
                         log_message(&format!("Error processing {}: {}", cargo_toml_path.display(), e));
                         eprintln!("Error processing {}: {}", cargo_toml_path.display(), e); // Still print critical errors to stderr
+                        status_log_message(&format!("ERROR: {:?}: {}", cargo_toml_path, e));
                     }
                 }
             }
         } else if path.file_name().map_or(false, |name| name == "Cargo.toml") {
             match extract_crate_info(&path, &project_root, &config) { // Pass config
-                Ok(Some(info)) => all_crate_info.push(info),
+                Ok(Some(info)) => {
+                    all_crate_info.push(info);
+                    status_log_message(&format!("PROCESSED: {:?}", path));
+                },
                 Ok(None) => {}, // Skipped
                 Err(e) => {
                     log_message(&format!("Error processing {}: {}", path.display(), e));
                     eprintln!("Error processing {}: {}", path.display(), e); // Still print critical errors to stderr
+                    status_log_message(&format!("ERROR: {:?}: {}", path, e));
                 }
             }
         } else {

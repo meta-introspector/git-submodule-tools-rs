@@ -7,7 +7,22 @@ members = [
     "crates/cargo_workspace_fixer",
     "crates/zos_initializer",
     "crates/task_converter",
-    "crates/cargo_crate_linker", "crates/submodule_manager", "crates/crate_indexer",
+    "crates/cargo_crate_linker", "crates/submodule_manager", "crates/crate_indexer", "crates/poetic_reflection/poetic_reflection", "poem_analyzer",
+]
+exclude = [
+    "vendor/octocrab",
+    # Other potential candidates for exclusion based on warnings:
+    # "vendor/gitoxide/gix",
+    # "vendor/gitoxide/gix-config",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/asciicast_processor",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/dump_tmux_status",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/gemini_utils",
+    # "../rustc/crates/introspector/vendor/libminizinc/vendor/grex",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/kantspel_lib",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/poem_macro_impl",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/poem_macros",
+    # "../rustc/crates/introspector/vendor/libminizinc/crates/tmux_controller",
+    # "../rustc/crates/introspector/vendor/libminizinc/vendor/tmux_interface",
 ]
 
 [patch.crates-io]

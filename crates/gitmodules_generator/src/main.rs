@@ -122,8 +122,8 @@ fn categorize_topic(org: &str, name: &str) -> Topic {
         "safetensors" => Topic::AiMl,
         "rustc" => Topic::RustCompiler,
         "gemini_logs" => Topic::GeminiLogs,
-        "aipack" => Topic::AiMl,
-        "aichat" => Topic::AiMl,
+        "aipack" => Topic::Aipack,
+        "aichat" => Topic::Aichat,
         _ => {
             // Special handling for Emacs-related repos
             if name.contains("emacs") || name.contains("el") {
