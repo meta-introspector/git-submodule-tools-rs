@@ -1,0 +1,7 @@
+base_url = "https://your-github-username.github.io/git-submodule-tools/"
+title = "Git Submodule Tools Project Documentation"
+compile_sass = true
+build_search_index = true
+
+[extra]
+# Add any extra variables here that you want to pass to your templates

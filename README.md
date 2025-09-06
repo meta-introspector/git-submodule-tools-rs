@@ -54,6 +54,24 @@ The project also acknowledges the broader landscape of AI and machine learning, 
 
 This project is written in Rust. To build the tools, you will need the Rust toolchain installed.
 
+## Zola Installation (Vendored)
+
+Zola, the static site generator, is now vendored as a Git submodule within this repository. This ensures a consistent build environment.
+
+1.  **Initialize and Update Submodules:**
+    ```bash
+    git submodule update --init --recursive
+    ```
+2.  **Build Vendored Zola:**
+    Navigate to the Zola submodule directory and build it:
+    ```bash
+    cd vendor/zola
+    cargo build --release
+    cd ../..
+    ```
+    The Zola executable will be located at `vendor/zola/target/release/zola`.
+
+
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/your-username/git-submodule-tools.git

@@ -26,3 +26,6 @@
 [submodule "vendor/meta-introspector/meta-meme.wiki"]
 	path = vendor/meta-introspector/meta-meme.wiki
 	url = https://github.com/meta-introspector/meta-meme.wiki.git
+[submodule "vendor/zola"]
+	path = vendor/zola
+	url = https://github.com/getzola/zola.git
