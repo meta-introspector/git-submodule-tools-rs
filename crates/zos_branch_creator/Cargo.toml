@@ -1,0 +1,8 @@
+[package]
+name = "zos_branch_creator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gix = { path = "../../vendor/gitoxide/gix" }
+anyhow = "1.0"
