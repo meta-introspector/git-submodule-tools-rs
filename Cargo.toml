@@ -9,6 +9,7 @@ members = [
     "crates/task_converter",
     "crates/cargo_crate_linker", "crates/submodule_manager", "crates/crate_indexer", "crates/poetic_reflection/poetic_reflection", "poem_analyzer",
     "crates/zos_branch_creator",
+    "crates/eco_pendulum_indexer",
 ]
 exclude = [
     "vendor/octocrab",

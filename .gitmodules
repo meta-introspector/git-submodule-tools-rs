@@ -20,3 +20,9 @@
 [submodule "vendor/oli-obk/cargo_metadata"]
 	path = vendor/oli-obk/cargo_metadata
 	url = https://github.com/oli-obk/cargo_metadata
+[submodule "vendor/meta-introspector/meta-meme"]
+	path = vendor/meta-introspector/meta-meme
+	url = https://github.com/meta-introspector/meta-meme
+[submodule "vendor/meta-introspector/meta-meme.wiki"]
+	path = vendor/meta-introspector/meta-meme.wiki
+	url = https://github.com/meta-introspector/meta-meme.wiki.git
