@@ -62,3 +62,17 @@ These concepts define the methodologies and stages of quality assurance.
     *   **Process Review:** Regular reviews of QA processes.
     *   **Feedback Integration:** Incorporation of feedback from teams.
     *   **Metric Tracking:** Monitoring of metrics (e.g., defect density, test execution time).
+
+## 4. Idea Compliance Aspects (Cross-Cutting Concerns)
+
+These aspects represent a set of rigorous criteria that can be applied to any "idea" (e.g., a new feature, a task, a code component, a meta-meme) to assess its compliance and maturity within the project's ecosystem. Each aspect implies a specific process or output that contributes to the idea's overall quality and integration.
+
+*   **Implemented in Rust:** The idea, if it involves code, is implemented using the Rust programming language, adhering to Rust's best practices and safety guarantees.
+*   **Has a Poem:** The idea has been poetically encoded, as per the SOP for Poetic Encoding of New Ideas (`docs/sop_poetic_encoding.md`), providing an alternative, more abstract, and resilient representation.
+*   **Rewritten in Emojis:** The idea has been condensed and re-expressed using emojis, serving as a highly compressed, visually intuitive, and potentially universal representation.
+*   **Encoding in Prime Numbers:** The idea's core concepts or properties have been encoded using prime numbers, leveraging their unique mathematical properties for cryptographic or theoretical purposes (e.g., Gödel numbering, ZOS vector).
+*   **Proven with Lean4:** The idea's underlying logic, algorithms, or properties have been formally proven correct using the Lean4 theorem prover, ensuring mathematical rigor and correctness.
+*   **ZKP Arguments of Knowledge:** The idea incorporates Zero-Knowledge Proofs (ZKPs) to demonstrate knowledge of certain facts without revealing the facts themselves, enhancing privacy, security, or conceptual integrity.
+*   **Documented:** The idea is thoroughly documented across all relevant project documentation, including design documents, task descriptions, and code comments, ensuring clarity and maintainability.
+*   **Socialized:** The idea has been effectively communicated and integrated within the project community, ensuring shared understanding, feedback, and adoption.
+
