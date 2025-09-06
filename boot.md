@@ -16,6 +16,8 @@ This project is structured as a "Lattice of Systems," where each component, from
 
 Your primary objective is to navigate this evolving landscape, understand the project's current state, and contribute to its continuous development.
 
-Begin by reviewing the detailed project updates and new files in `docs/project_updates.md` (which will be created shortly). This document will provide a comprehensive overview of recent changes and their implications.
+Begin by reviewing the detailed project updates and new files in `docs/project_updates.md`. This document provides a comprehensive overview of recent changes and their implications.
+
+Your next major strategic objective is outlined in `CRQ_QA_Compliance_Lattice.md`, which details the formalization of our QA structure into a compliance lattice and its integration with the OODA loop.
 
 Proceed with caution and precision, for every action generates new data and shapes the future of the Chronos-Code.
