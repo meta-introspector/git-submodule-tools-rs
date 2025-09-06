@@ -1,0 +1,76 @@
+name: Deploy Zola Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # or your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: true # Checkout submodules
+
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        override: true
+
+    - name: Build Vendored Zola
+      run: |
+        chmod +x ./build_vendored_zola.sh
+        ./build_vendored_zola.sh
+
+    - name: Copy Documentation to Zola Content
+      run: |
+        mkdir -p site/content/docs/sops
+        mkdir -p site/content/docs/crqs
+        mkdir -p site/content/docs/chronos_code_ring
+        mkdir -p site/content/docs/shell_scripts_documentation
+        mkdir -p site/content/docs/youtube_scripts
+        mkdir -p site/content/docs/multi_modal_prompts
+
+        cp docs/glossary.md site/content/docs/
+        cp docs/project_manifest.md site/content/docs/
+        cp docs/rust_code_poetics.md site/content/docs/
+        cp docs/sop_creative_decomposition.md site/content/docs/sops/
+        cp docs/sop_project_documentation_and_manifest.md site/content/docs/sops/
+        cp docs/sop_recovery_reboot.md site/content/docs/sops/
+        cp docs/sop_spectral_commentary.md site/content/docs/sops/
+        cp gemini.md site/content/docs/ # Main project overview
+
+        # Copy CRQs
+        cp tasks/G-CRQ-*.md site/content/docs/crqs/
+
+        # Copy Chronos Code Ring docs
+        cp docs/chronos_code_ring/*.md site/content/docs/chronos_code_ring/
+
+        # Copy Shell Scripts Documentation
+        cp docs/shell_scripts_documentation/*.md site/content/docs/shell_scripts_documentation/
+
+        # Copy YouTube Scripts
+        cp docs/youtube_scripts/*.md site/content/docs/youtube_scripts/
+
+        # Copy Multi-Modal Prompts
+        cp -r docs/multi_modal_prompts/* site/content/docs/multi_modal_prompts/
+
+        # Optional: Convert README.md to a Zola page if desired, or link to it
+        # For simplicity, let's just copy it as a general page for now
+        cp README.md site/content/docs/README.md
+
+    - name: Build Zola Site
+      run: |
+        ./vendor/zola/target/release/zola build --output-dir ../../static/html # Output to project root static/html
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./static/html # Directory containing the built site
+        publish_branch: gh-pages # The branch to publish to
