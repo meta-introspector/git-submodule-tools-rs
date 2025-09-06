@@ -31,3 +31,13 @@
 3.  **Documentation:** Ensure all actions, decisions, and their justifications are thoroughly documented within the appropriate framework (e.g., updating task files, creating new SOPs, logging QA results).
 4.  **Clarification:** If any part of the framework is unclear, seek immediate clarification from the user or consult existing project guidelines.
 5.  **Proactive Integration:** Integrate these principles into every aspect of the development workflow, rather than treating them as optional steps.
+
+## SOP Creation Process:
+
+This Standard Operating Procedure document is being created through an interactive, iterative process between the user and the Gemini agent. The user provides common commands and errors encountered during development, and the agent is responsible for documenting them in a structured format within this SOP. This process ensures that the SOP is directly relevant to real-world development challenges and evolves with the project's needs.
+
+**Workflow:**
+1.  **User Input:** The user identifies a common command or error and communicates it to the agent.
+2.  **Agent Documentation:** The agent adds a new section to this SOP, detailing the command/error, its description, implications (if any), and mitigation/resolution steps.
+3.  **Iterative Refinement:** The process repeats, with the user providing further inputs and the agent continuously updating and refining the SOP.
+4.  **Commit and Push:** Periodically, the agent commits the updated SOP to the version control system to ensure persistence and traceability.
