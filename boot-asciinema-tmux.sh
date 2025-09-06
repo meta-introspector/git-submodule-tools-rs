@@ -14,7 +14,7 @@ echo "Launching tmux session: ${SESSION_NAME}"
 
 # The command to be executed inside tmux
 # We need to escape the double quotes within the -i argument for the inner gemini command.
-TMUX_INNER_COMMAND='gemini --model gemini-2.5-flash --checkpointing=true --include-directories ~/storage/github -i "Read this file @tmux-plan.md"'
+TMUX_INNER_COMMAND='./boot.sh'
 
 # Start asciinema recording, and inside it, start/attach to a tmux session.
 # The tmux session will then execute the gemini command.
