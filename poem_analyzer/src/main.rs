@@ -15,7 +15,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     for entry in WalkDir::new(docs_path)
         .into_iter()
         .filter_map(|e| e.ok())
-        .filter(|e| e.file_type().is_file() && e.path().extension().map_or(false, |ext| ext == "md"))
+        .filter(|e| e.file_type().is_file() && e.path().extension().map_or(false, |ext| {
+            let ext_str = ext.to_str().unwrap_or("");
+            ext_str == "md" || ext_str == "rs" || ext_str == "sh" || ext_str == "toml" || ext_str == "txt"
+        }))
     {
         let path = entry.path();
         let content = fs::read_to_string(path)?;
