@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Path to the main files.txt
+FILES_TXT_PATH="/data/data/com.termux/files/home/storage/github/files.txt"
+
+# Path for the list of files to be indexed
+INDEXED_FILES_LIST_PATH="/data/data/com.termux/files/home/storage/github/files_list_${CURRENT_TIMESTAMP}.txt"
+
+# Path to the crate_indexer binary
+CRATE_INDEXER_BIN="./target/debug/crate_indexer"
+
+# Ensure the crate_indexer is built
+cargo build --package crate_indexer
+
+# Get the current timestamp
+CURRENT_TIMESTAMP=$(date +%s)
+
+# Determine LAST_TIMESTAMP from the last file in the most recent files_list_*.txt
+LAST_TIMESTAMP=0 # Default to 0 (epoch) if no previous files_list_*.txt found
+
+LATEST_INDEXED_FILES_LIST=$(ls -t /data/data/com.termux/files/home/storage/github/files*.txt 2>/dev/null | head -n 1)
+
+if [ -n "$LATEST_INDEXED_FILES_LIST" ]; then
+    LAST_FILE_IN_LIST=$(tail -n 1 "$LATEST_INDEXED_FILES_LIST")
+    if [ -f "$LAST_FILE_IN_LIST" ]; then
+        LAST_TIMESTAMP=$(stat -c %Y "$LAST_FILE_IN_LIST")
+        echo "Derived LAST_TIMESTAMP from '$LAST_FILE_IN_LIST': $LAST_TIMESTAMP"
+    else
+        echo "Last file in '$LATEST_INDEXED_FILES_LIST' not found. Starting with all files."
+    fi
+else
+    echo "No previous files_list_*.txt found. Starting with all files."
+fi
+
+# Define the output JSON file with a timestamp
+OUTPUT_JSON_FILE="/data/data/com.termux/files/home/storage/github/files_${CURRENT_TIMESTAMP}.json"
+
+if (( LAST_TIMESTAMP > 0 )); then
+    echo "Finding files newer than $LAST_TIMESTAMP in the directory..."
+    
+    # Convert Unix timestamp to a date string for find -newermt
+    LAST_DATE_STRING=$(date -d @"$LAST_TIMESTAMP" "+%Y-%m-%d %H:%M:%S")
+
+    # Find files newer than the last timestamp and output to INDEXED_FILES_LIST_PATH
+    find /data/data/com.termux/files/home/storage/github/ -type f -newermt "$LAST_DATE_STRING" > "$INDEXED_FILES_LIST_PATH"
+    
+    # Check if there are newer files to process
+    if [ -s "$INDEXED_FILES_LIST_PATH" ]; then
+        echo "Processing newer files..."
+        # Run crate_indexer on the list of newer files
+        "$CRATE_INDEXER_BIN" --input-file "$INDEXED_FILES_LIST_PATH" --output-file "$OUTPUT_JSON_FILE"
+        echo "Newer files indexed and output to $OUTPUT_JSON_FILE"
+    else
+        echo "No newer files found to process."
+    fi
+else
+    find /data/data/com.termux/files/home/storage/github/ -type f  > "$INDEXED_FILES_LIST_PATH"
+    
+    echo "No previous timestamp found. Indexing all files from $FILES_TXT_PATH."
+    echo "Processing all files from $FILES_TXT_PATH..."
+    # Run crate_indexer on the original files.txt
+    "$CRATE_INDEXER_BIN" --input-file "$INDEXED_FILES_LIST_PATH" --output-file "$OUTPUT_JSON_FILE"
+    echo "All files indexed and output to $OUTPUT_JSON_FILE"
+fi
+
+echo "Script finished."

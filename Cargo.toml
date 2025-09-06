@@ -7,7 +7,7 @@ members = [
     "crates/cargo_workspace_fixer",
     "crates/zos_initializer",
     "crates/task_converter",
-    "crates/cargo_crate_linker",
+    "crates/cargo_crate_linker", "crates/submodule_manager", "crates/crate_indexer",
 ]
 
 [patch.crates-io]
@@ -20,6 +20,8 @@ poem_macro_impl = { path = "../rustc/crates/introspector/vendor/libminizinc/crat
 gemini_utils = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/gemini_utils" }
 poem_macros = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/poem_macros" }
 kantspel_lib = { path = "../rustc/crates/introspector/vendor/libminizinc/crates/kantspel_lib" }
+gix = { path = "vendor/gitoxide/gix" }
+gix-config = { path = "vendor/gitoxide/gix-config" }
 
 [workspace.lints]
 # Empty lints table to satisfy workspace members that expect it.

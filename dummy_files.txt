@@ -1,0 +1,7 @@
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/submodule_manager/Cargo.toml
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/crate_indexer/Cargo.toml
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/git_repo_analyzer/Cargo.toml
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/task_converter/Cargo.toml
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/cargo_crate_linker/Cargo.toml
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/gitmodules_generator/Cargo.toml
+/data/data/com.termux/files/home/storage/github/git-submodule-tools/crates/cargo_workspace_fixer/Cargo.toml
