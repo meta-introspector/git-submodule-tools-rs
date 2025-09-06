@@ -35,7 +35,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     println!("\n--- Glossary (Word Counts) ---");
-    for (word, count) in &glossary {
+    let mut sorted_glossary: Vec<(&String, &usize)> = glossary.iter().collect();
+    sorted_glossary.sort_by_key(|&(word, _)| word);
+    for (word, count) in sorted_glossary {
         println!("{}: {}", word, count);
     }
 
@@ -56,9 +58,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     println!("\n--- Graph Edges (Sample) ---");
-    for (source, targets) in graph.iter().take(10) { // Take first 10 for sample output
+    let mut sorted_graph_sources: Vec<(&String, &HashMap<String, usize>)> = graph.iter().collect();
+    sorted_graph_sources.sort_by_key(|&(source, _)| source);
+
+    for (source, targets) in sorted_graph_sources.into_iter().take(10) { // Take first 10 for sample output
         println!("Source: {}", source);
-        for (target, count) in targets.iter().take(5) { // Take first 5 targets for sample
+        let mut sorted_targets: Vec<(&String, &usize)> = targets.iter().collect();
+        sorted_targets.sort_by_key(|&(target, _)| target);
+        for (target, count) in sorted_targets.into_iter().take(5) { // Take first 5 targets for sample
             println!("  -> {}: {}", target, count);
         }
     }
