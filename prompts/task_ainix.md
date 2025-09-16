@@ -15,6 +15,11 @@ Plan:
 5.  **Create Shell Script for Updating Submodules:** I'll write a shell script (`tools/update_all_submodules.sh`) to automate the `git submodule update --init --recursive` command.
 6.  **Test:** I'll run the add script, verify the submodule is added, then run the update script.
 
-Let's start by examining the `.gitmodules` file.Understood. I'll adhere to the existing `vendor/meta-introspector/` convention for the new `mkAIDerivation` submodule.
-
-Now, I'll create the SOP and shell script for adding it.SOP for submodule addition is done. Next, I'll script the `mkAIDerivation` submodule addition.Script created. Now, make it executable.Script's executable. Now, SOP and script for submodule updates.Script's executable. Now, SOP and script for submodule updates.Script's executable. Now, SOP and script for submodule updates.
+read the existing sops and docs in prompts and scripts and use them and create a new set of scripts in a task directory task/ainix/
+dont edit anything outside of that.
+use timeouts on all scripts.
+run all command via bash.
+catch and report all errors.
+use verbose logging and strace.
+capture all logs to the task directory.
+we are running headless, dont use any interactive commands for now.
