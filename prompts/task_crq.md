@@ -16,3 +16,7 @@
 
 *   **Local Git Access:** Tasks are restricted to accessing local Git upstream repositories only; no GitHub API keys or external network access to GitHub are permitted.
 *   **Sandboxed Environment:** Each task operates within a sandboxed environment with Access Control Lists (ACLs) to ensure isolation and security.
+
+## Progress Update:
+
+Understood. I have noted the prelude regarding prime numbers and the definitions for Change Requests (CRQs) and the task execution environment, including the constraints on Git access and sandboxed operations.

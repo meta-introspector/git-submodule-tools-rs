@@ -6,6 +6,7 @@ SUBMODULE_FLAKES_DIR="/data/data/com.termux.nix/files/home/pick-up-nix2/source/g
 GITMODULES_FILE="/data/data/com.termux.nix/files/home/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/.gitmodules"
 UPDATE_SCRIPT="${SUBMODULE_FLAKES_DIR}/update_submodule_flake.sh"
 REPO_ROOT="/data/data/com.termux.nix/files/home/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs"
+PYTHON_SCRIPT="/data/data/com.termux.nix/files/home/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/parse_gitmodules.py"
 
 if [ ! -f "${GITMODULES_FILE}" ]; then
     echo "Error: .gitmodules file not found at ${GITMODULES_FILE}"
@@ -17,6 +18,11 @@ if [ ! -f "${UPDATE_SCRIPT}" ]; then
     exit 1
 fi
 
+if [ ! -f "${PYTHON_SCRIPT}" ]; then
+    echo "Error: Python parsing script not found at ${PYTHON_SCRIPT}"
+    exit 1
+fi
+
 echo "Initializing and updating Git submodules..."
 pushd "${REPO_ROOT}" > /dev/null
 git submodule update --init --recursive
@@ -25,26 +31,10 @@ echo "Git submodules initialized and updated."
 
 echo "Generating Nix flakes for all Git submodules..."
 
-# Read .gitmodules and process each submodule
-# Extract submodule names, paths, and URLs separately
-SUBMODULE_NAMES=$(grep -E '^submodule ' "${GITMODULES_FILE}" | sed -E 's/^submodule "(.*)"/
-1/')
-SUBMODULE_PATHS=$(grep -E '^\tpath = ' "${GITMODULES_FILE}" | sed -E 's/^\tpath = (.*)/
-1/')
-SUBMODULE_URLS=$(grep -E '^\turl = ' "${GITMODULES_FILE}" | sed -E 's/^\turl = (.*)/
-1/')
+# Read .gitmodules and process each submodule using Python script
+SUBMODULE_INFO=$(python3 "${PYTHON_SCRIPT}" "${GITMODULES_FILE}")
 
-# Convert multiline strings to arrays
-IFS=$'\n' read -r -d '' -a NAMES_ARRAY <<< "${SUBMODULE_NAMES}"
-IFS=$'\n' read -r -d '' -a PATHS_ARRAY <<< "${SUBMODULE_PATHS}"
-IFS=$'\n' read -r -d '' -a URLS_ARRAY <<< "${SUBMODULE_URLS}"
-
-# Iterate through the arrays
-for i in "${!NAMES_ARRAY[@]}"; do
-    submodule_name="${NAMES_ARRAY[$i]}"
-    submodule_path="${PATHS_ARRAY[$i]}"
-    submodule_url="${URLS_ARRAY[$i]}"
-
+echo "${SUBMODULE_INFO}" | while IFS=',' read -r submodule_name submodule_path submodule_url; do
     echo "Processing submodule: ${submodule_name}"
     echo "  Path: ${submodule_path}"
     echo "  URL: ${submodule_url}"

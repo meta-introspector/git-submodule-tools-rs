@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11"; # Using a stable Nixpkgs branch
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, submoduleUrl, submoduleRev, submoduleSha256 ? "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" }:
     let
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       forAllSystems = nixpkgs.lib.genAttrs systems;
@@ -18,17 +18,6 @@
             inherit system;
             config.allowUnfree = true; # Allow unfree packages if necessary for submodules
           };
-        in
-        # Placeholder for the submodule's git URL and revision
-        let
-          submoduleUrl = "https://github.com/example/my-submodule.git";
-          submoduleRev = "abcdef1234567890abcdef1234567890abcdef12";
-          # IMPORTANT: You must replace "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-          # with the actual SHA256 hash of the fetched content.
-          # You can obtain this hash by running:
-          # `nix-prefetch-url --unpack ${submoduleUrl} ${submoduleRev}`
-          # or by letting Nix fail and telling you the expected hash.
-          submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
         in
         pkgs.stdenv.mkDerivation {
           pname = "standalone-submodule-${builtins.baseNameOf (builtins.stringToPath submoduleUrl)}";
@@ -50,7 +39,7 @@
           # Operational Principle: Scripting First (shell script for installPhase)
           # Operational Principle: Low Memory Environment (avoiding 'find')
           installPhase = '''
-            echo "Performing standalone git checkout of ${submoduleUrl} at revision ${submoduleRev}"
+            echo "Performing standalone git checkout of the provided submodule URL at revision ${submoduleRev}"
             mkdir -p $out
             cp -r $src/* $out/
             echo "Checkout complete. Contents are in $out"

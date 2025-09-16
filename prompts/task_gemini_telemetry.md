@@ -56,3 +56,20 @@ Research, identify, or develop a Rust-based and Nix-based OpenTelemetry (OTel) t
 *   `vendor/external/monomcp-rust/docs/sops/rust_crate_vendorization_sop.md`
 *   `vendor/external/monomcp-rust/docs/sops/rust_crate_workspace_integration_sop.md`
 *   `vendor/external/monomcp-rust/docs/sops/submodule_management_sop.md`
+
+## Progress Update:
+
+Okay, I understand the task. I will begin by researching existing Rust-based OpenTelemetry collectors, prioritizing those with Nix compatibility.
+
+My research indicates that a standalone "Rust-based OpenTelemetry Telemetry Collector" (analogous to the official OpenTelemetry Collector written in Go) is not a common or widely available solution.
+
+Instead, the typical approach involves:
+1.  **Instrumenting your Rust application (`gemini-cli` in this case) to produce and export OpenTelemetry data.** This SDK allows your application to *generate* traces, metrics, and logs.
+2.  **Configuring an OpenTelemetry Rust Exporter** (e.g., `opentelemetry-otlp`) within your Rust application to *send* this telemetry data to an external OpenTelemetry Collector (which is usually Go-based) or directly to an observability backend.
+3.  **Managing the Rust application and its OpenTelemetry dependencies using Nix.**
+
+Could you please clarify if your objective is to:
+*   **Instrument `gemini-cli` (a Rust application) to produce and export OpenTelemetry data?**
+*   Or are you specifically looking for a Rust application that *acts as* a standalone telemetry collector service?
+
+Based on your response, I can proceed with a more targeted plan.
