@@ -43,3 +43,16 @@ in
 ```
 
 **Your output should be the Nix build expression for this task, adhering to all the principles above.**
+
+
+1.  **Save the Expression:** Save the above content to a file, for example, `submodule-checkout.nix`.
+2.  **Update `submoduleUrl` and `submoduleRev`:** Replace the placeholder values for `submoduleUrl` and `submoduleRev` with the actual URL and commit hash of the submodule you wish to check out.
+3.  **Initial Build (and `sha256` discovery):**
+    Run `nix-build submodule-checkout.nix`. This will likely fail on the first attempt because the `sha256` hash is a placeholder. Nix will output the correct `sha256` hash in the error message.
+4.  **Update `sha256`:** Copy the correct `sha256` hash from the Nix error message and paste it into the `sha256` field in your `submodule-checkout.nix` file.
+5.  **Final Build:** Run `nix-build submodule-checkout.nix` again. This time, it should succeed, and the checked-out submodule will be available in the Nix store, with a symlink to it in `./result`.
+
+
+we saved the file here,
+now create shell scripts to test it and do the next steps
+~/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/submodule-checkout2/flake.nix

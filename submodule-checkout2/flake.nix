@@ -1,6 +1,3 @@
-Here is a Nix build expression for a standalone git checkout of a submodule, adhering to your operational principles. This derivation creates a reproducible "digital mirror" of the specified Git repository at a given revision within the Nix store.
-
-```nix
 # This Nix expression defines a reproducible build for a standalone Git submodule checkout.
 # It adheres to the principle of "Digital Mirroring" by creating an immutable snapshot
 # of the repository at a specific revision in the Nix store.
@@ -59,15 +56,3 @@ pkgs.stdenv.mkDerivation {
     platforms = pkgs.lib.platforms.all;
   };
 }
-```
-
-**How to Use and Next Steps:**
-
-1.  **Save the Expression:** Save the above content to a file, for example, `submodule-checkout.nix`.
-2.  **Update `submoduleUrl` and `submoduleRev`:** Replace the placeholder values for `submoduleUrl` and `submoduleRev` with the actual URL and commit hash of the submodule you wish to check out.
-3.  **Initial Build (and `sha256` discovery):**
-    Run `nix-build submodule-checkout.nix`. This will likely fail on the first attempt because the `sha256` hash is a placeholder. Nix will output the correct `sha256` hash in the error message.
-4.  **Update `sha256`:** Copy the correct `sha256` hash from the Nix error message and paste it into the `sha256` field in your `submodule-checkout.nix` file.
-5.  **Final Build:** Run `nix-build submodule-checkout.nix` again. This time, it should succeed, and the checked-out submodule will be available in the Nix store, with a symlink to it in `./result`.
-
-This derivation provides a foundational step for integrating submodules into a Nix-based workflow, ensuring reproducibility and adherence to your specified operational principles. Further steps, such as building the submodule's contents (if it's a Rust crate, for example), would involve adding more specific `buildInputs` and `buildPhase` logic within the `mkDerivation` block.

@@ -1,4 +1,4 @@
-reviewsubmodule.md
+~/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/prompts/task_plan_reviewsubmodule.md
 
 1. create and use standard operating procedures.
 2. document all changes with change requests before they happen.
