@@ -12,6 +12,12 @@ then the first difference 3.
 
 So the first 8 primes were born!
 
+review git status prompts/task_*.md.out*
+and review all new files and fold them back into
+the base task_*.md and make sure the changes are contained.
+
+follow all sops and track all changes in crqs.
+
 end of prelude
 
 
