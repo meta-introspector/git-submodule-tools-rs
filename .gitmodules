@@ -16,3 +16,6 @@
 [submodule "vendor/zola"]
 	path = vendor/zola
 	url = https://github.com/getzola/zola.git
+[submodule "vendor/meta-introspector/mkAIDerivation"]
+	path = vendor/meta-introspector/mkAIDerivation
+	url = https://github.com/meta-introspector/mkAIDerivation.git
