@@ -1,2 +1,0 @@
-for git repo SUBMODULE in SUBMODULE dir we want to construct a standalone git checkout like with the github action runner act  or nix.
-basically a nix build.

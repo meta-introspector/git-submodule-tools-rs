@@ -1,3 +1,5 @@
+reviewsubmodule.md
+
 1. create and use standard operating procedures.
 2. document all changes with change requests before they happen.
 3. write scripts for all changes in shell, then later we translate them to rust and prove them with lean4 and minizinc.
@@ -45,8 +47,15 @@ Task:
 	
 	basically a nix build.
 
-	nix run nixpkgs/26833ad1dad83826ef7cc52e0009ca9b7097c79f#gemini-cli \	
-	--include-directories=~/pick-up-nix2/ \
-	--model gemini-2.5-flash \
-	--checkpointing \
-	--prompt `cat prompt.md` \
+see ~/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/runprompt1.sh we are running now 
+#for x in prompts/reviewsubmodule*.md;
+#do echo "${x}";
+export BASENAME=prompts/reviewsubmodule
+for i in $(seq 1 10);
+do echo $i;
+   cat $BASENAME*.md | nix run nixpkgs/26833ad1dad83826ef7cc52e0009ca9b7097c79f#gemini-cli -- --include-directories=~/pick-up-nix2/ --model gemini-2.5-flash --y --checkpointing --prompt | tee "${BASENAME}.out${i}.md";   
+done
+
+#done
+
+rewrite 
