@@ -1,32 +1,9 @@
-## Relevant Gitmodules Files and Generator Paths
+## Task: Gitmodules File Listing
 
-This file lists various `.gitmodules` files and paths related to the `gitmodules_generator` crate within the project.
+### Referenced SOPs:
+*   None directly, but may be referenced by SOPs related to Git submodule management.
 
-./.github/actions/cache-nix-action/.gitmodules
-./.gitmodules
-./source/github/meta-introspector/git-submodule-tools-rs/.gitmodules
-./source/github/meta-introspector/git-submodule-tools-rs/crates/gitmodules_generator
-./source/github/meta-introspector/git-submodule-tools-rs/crates/gitmodules_generator/Cargo.toml
-./source/github/meta-introspector/git-submodule-tools-rs/crates/gitmodules_generator/src
-./source/github/meta-introspector/git-submodule-tools-rs/crates/gitmodules_generator/src/main.rs
-./source/github/meta-introspector/streamofrandom/.gitmodules
-./source/github/meta-introspector/lattice-introspector/.gitmodules
-./source/github/meta-introspector/submodules/.gitmodules
-./source/github/meta-introspector/submodules/crates/gitmodules_generator
-./source/github/meta-introspector/submodules/crates/gitmodules_generator/Cargo.toml
-./source/github/meta-introspector/submodules/crates/gitmodules_generator/src
-./source/github/meta-introspector/submodules/crates/gitmodules_generator/src/main.rs
-./source/github/meta-introspector/submodules/vendor/zola/.gitmodules
-./source/github/meta-introspector/time/.gitmodules
-./vendor/external/monomcp-rust/.gitmodules
-./vendor/external/rust/.gitmodules
-./vendor/external/rust/library/stdarch/.gitmodules
-./vendor/external/sophia_rs/.gitmodules
-./vendor/ebpf/aya/.gitmodules
+### Referenced CRQs:
+*   [CRQ: Standardize Task Documentation with SOPs and CRQs](CRQ_Standardize_Task_Documentation_with_SOPs_and_CRQs.md)
 
-## Progress Update:
-
-I've received the prelude and a list of `.gitmodules` related files. What would you like me to do with this information? Are you looking to analyze these files, understand the `gitmodules_generator` crate, or perform some other task?
-
---- Appended Content from task_gitmodules.md.out1.md ---
-I've received the prelude and a list of `.gitmodules` related files. What would you like me to do with this information? Are you looking to analyze these files, understand the `gitmodules_generator` crate, or perform some other task?
+This document contains a generated list of `.gitmodules` files and paths related to the `gitmodules_generator` crate found within the project. It serves as a reference for tasks related to Git submodule management and generation.

@@ -1,5 +1,9 @@
-using ~/pick-up-nix2/source/github/meta-introspector/git-submodules-rs-nix/.emacs.d/nix-magit/
-create emacs lisp commands to run gemini-cli ~/pick-up-nix2/vendor/external/gemini-cli/
-making changes to both to integrate them better.
-see our ~/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/runprompt3.sh convet that to emacs lisp
-make a solfunmeme mode for emacs to run this process continiously
+## Task: Emacs Lisp Integration with Gemini CLI
+
+### Referenced SOPs:
+*   [SOP: Emacs Lisp Integration with Gemini CLI](docs/sop_emacs_lisp_integration.md)
+
+### Referenced CRQs:
+*   [CRQ: Standardize Task Documentation with SOPs and CRQs](CRQ_Standardize_Task_Documentation_with_SOPs_and_CRQs.md)
+
+This task outlines the standard operating procedures for integrating Emacs Lisp commands with the `gemini-cli` tool.

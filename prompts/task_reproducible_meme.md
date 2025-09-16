@@ -1,38 +1,9 @@
-# Task: Develop a Reproducible Digital Mycelium for Meta-AI Life Simulation
+## Task: Develop a Reproducible Digital Mycelium for Meta-AI Life Simulation
 
-## Objective:
-Explore and implement the concept of a "digital mycelium" using Nix derivations to track task outputs, forming the basis for a quasi meta-AI life simulation. This involves leveraging Nix's reproducibility to create a traceable and evolving system.
+### Referenced SOPs:
+*   [SOP: Develop a Reproducible Digital Mycelium for Meta-AI Life Simulation](docs/sop_reproducible_digital_mycelium.md)
 
-## Idea:
+### Referenced CRQs:
+*   [CRQ: Standardize Task Documentation with SOPs and CRQs](CRQ_Standardize_Task_Documentation_with_SOPs_and_CRQs.md)
 
-Utilize Nix to create derivations for each task, meticulously tracking all resulting files. These derivations, even if they produce different results upon re-execution, will be stored as part of a "digital mycelium" within a quasi meta-AI life simulation.
-
-## Key Questions and Initial Thoughts:
-
-1.  **Defining Task Derivations in Nix:**
-    *   How would a task's inputs, outputs, and dependencies be represented in a `flake.nix` or `default.nix`?
-    *   Consider using Rust, Lean4, MiniZinc, and LLVM via Nix for implementation.
-
-2.  **Tracking Files for the Digital Mycelium:**
-    *   What kind of metadata should be stored for each file?
-    *   Where would this metadata be stored? (e.g., IPFS, Git, Hugging Face LFS datasets).
-
-3.  **Conceptualizing the Meta-AI Life Simulation:**
-    *   What would constitute "life" or "evolution" in this context?
-    *   How would the AI life simulation interact with the Nix derivations?
-    *   Consider each Git commit as a "heartbeat" of this evolving system.
-
-## Next Steps:
-
-*   Review other tasks in the project with this "digital mycelium" lens to identify potential integration points and further refine the concept.
-
-## Progress Update:
-
-Okay, I understand the task. The goal is to create a "digital mycelium" using Nix derivations to track task outputs for a meta-AI life simulation. I need to address how tasks are defined in Nix, how file metadata is stored, and the conceptualization of the AI life simulation.
-
-I'll begin by examining existing Nix files in the project to understand current conventions for defining derivations, which will help in representing task inputs, outputs, and dependencies.
-
---- Appended Content from task_reproducible_meme.md.out1.md ---
-Okay, I understand the task. The goal is to create a "digital mycelium" using Nix derivations to track task outputs for a meta-AI life simulation. I need to address how tasks are defined in Nix, how file metadata is stored, and the conceptualization of the AI life simulation.
-
-I'll begin by examining existing Nix files in the project to understand current conventions for defining derivations, which will help in representing task inputs, outputs, and dependencies.
+This task outlines the standard operating procedures for developing a reproducible digital mycelium for meta-AI life simulation.

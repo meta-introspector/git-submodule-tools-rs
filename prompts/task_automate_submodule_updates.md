@@ -1,13 +1,9 @@
-# Task: Automate Submodule Updates
+## Task: Automate Submodule Updates
 
-## Description
-Implement automated checks (e.g., via CI) to monitor for new commits in upstream submodule repositories. This ensures dependencies remain current and helps identify potential integration issues early.
+### Referenced SOPs:
+*   [SOP: Automate Submodule Updates](docs/sop_automate_submodule_updates.md)
 
-## Origin
-`reviewsubmodule_task2.md.out`
+### Referenced CRQs:
+*   [CRQ: Standardize Task Documentation with SOPs and CRQs](CRQ_Standardize_Task_Documentation_with_SOPs_and_CRQs.md)
 
-## Next Steps
-- Research available CI/CD tools and methods for monitoring Git submodule updates.
-- Design a workflow for automated submodule update checks.
-- Implement the automated checks in the project's CI/CD pipeline.
-- Document the process for configuring and maintaining automated submodule updates.
+This task outlines the standard operating procedures for automating submodule updates.

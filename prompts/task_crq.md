@@ -1,25 +1,9 @@
-# Change Request (CRQ) and Task Definition
+## Task: Change Request (CRQ) and Task Definition
 
-## Characteristics of a Change Request (CRQ):
+### Referenced SOPs:
+*   [SOP: Change Request (CRQ) and Task Definition](docs/sop_crq_and_task_definition.md)
 
-*   **Task Association:** Each task is an integral part of a larger Change Request (CRQ).
-*   **Intent-Driven:** Every CRQ is defined by a clear intent, which can be characterized by its:
-    *   **Vibe/Vector:** The overall direction or sentiment.
-    *   **Embedding/Encoding:** Its representation in a structured or numerical form.
-    *   **Decidability:** The ability to determine its outcome.
-    *   **Finiteness:** A defined scope with a clear beginning and end.
-    *   **Discreteness:** A distinct and separate unit of work.
-    *   **Limited Scope:** Confined within specific boundaries.
-    *   **Constraints:** Operating under defined restrictions.
+### Referenced CRQs:
+*   [CRQ: Standardize Task Documentation with SOPs and CRQs](CRQ_Standardize_Task_Documentation_with_SOPs_and_CRQs.md)
 
-## Task Execution Environment:
-
-*   **Local Git Access:** Tasks are restricted to accessing local Git upstream repositories only; no GitHub API keys or external network access to GitHub are permitted.
-*   **Sandboxed Environment:** Each task operates within a sandboxed environment with Access Control Lists (ACLs) to ensure isolation and security.
-
-## Progress Update:
-
-Understood. I have noted the prelude regarding prime numbers and the definitions for Change Requests (CRQs) and the task execution environment, including the constraints on Git access and sandboxed operations.
-
---- Appended Content from task_crq.md.out1.md ---
-Understood. I have noted the prelude regarding prime numbers and the definitions for Change Requests (CRQs) and the task execution environment, including the constraints on Git access and sandboxed operations.
+This task outlines the standard operating procedures for defining Change Requests (CRQs) and tasks.

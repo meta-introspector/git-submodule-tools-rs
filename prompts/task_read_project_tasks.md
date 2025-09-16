@@ -1,21 +1,9 @@
-# Task: Read Project Tasks
+## Task: Read Project Tasks
 
-## Description
-This task outlines the procedure for reading and reviewing project task files, which are located in the `~/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/prompts/` directory.
+### Referenced SOPs:
+*   [SOP: Read Project Tasks](docs/sop_read_project_tasks.md)
 
-## Location of Task Files
-All project task files are stored in:
-`/data/data/com.termux.nix/files/home/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/prompts/`
+### Referenced CRQs:
+*   [CRQ: Standardize Task Documentation with SOPs and CRQs](CRQ_Standardize_Task_Documentation_with_SOPs_and_CRQs.md)
 
-## Procedure for Reading Tasks
-1.  **List Task Files**: Use the `glob` tool with the pattern `task_*.md` within the specified directory to get a list of all task files.
-2.  **Read Individual Task Files**: For each identified task file, use the `read_file` tool to read its content.
-3.  **Review and Understand**: Carefully review the description, origin, and next steps outlined in each task file to understand its purpose and requirements.
-4.  **Prioritize and Plan**: Based on the review, prioritize tasks and formulate a plan for their execution.
-
-## Origin
-User instruction to centralize task files and create a task for reading them.
-
-## Next Steps
-- Execute the procedure outlined above to list and read existing task files.
-- Based on the content of the tasks, identify the next most critical action to take.
+This task outlines the standard operating procedures for reading and reviewing project task files.
