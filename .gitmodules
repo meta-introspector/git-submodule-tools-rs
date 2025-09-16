@@ -7,20 +7,7 @@
 [submodule "vendor/octocrab"]
 	path = vendor/octocrab
 	url = https://github.com/XAMPPRocky/octocrab
-# Topic: Misc
-## Organization: GitoxideLabs
-[submodule "vendor/GitoxideLabs/gitoxide"]
-	path = vendor/GitoxideLabs/gitoxide
-	url = https://github.com/GitoxideLabs/gitoxide
-## Organization: XAMPPRocky
-[submodule "vendor/XAMPPRocky/octocrab"]
-	path = vendor/XAMPPRocky/octocrab
-	url = https://github.com/XAMPPRocky/octocrab
-## Organization: oli-obk
-[submodule "vendor/oli-obk/cargo_metadata"]
-	path = vendor/oli-obk/cargo_metadata
-	url = https://github.com/oli-obk/cargo_metadata
-[submodule "vendor/meta-introspector/meta-meme"]
+[submodule "vendor/meta-introspector/meta-meme"]#
 	path = vendor/meta-introspector/meta-meme
 	url = https://github.com/meta-introspector/meta-meme
 [submodule "vendor/meta-introspector/meta-meme.wiki"]
