@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
 
-# update_all_submodules.sh
-# This script updates all Git submodules in the current repository.
+# SOP: Updating Git Submodules
+# This script automates the process of updating all Git submodules within this project.
 
-# Exit immediately if a command exits with a non-zero status.
-set -e
+# Navigate to the project root (assuming the script is run from the project root or a subdirectory)
+# If run from a subdirectory, you might need to adjust this.
+PROJECT_ROOT=$(git rev-parse --show-toplevel)
+cd "$PROJECT_ROOT" || exit 1
 
 echo "Updating all Git submodules..."
 
-# Update all submodules, initializing any that haven't been initialized yet,
-# and doing so recursively for nested submodules.
+# Execute the git submodule update command
 git submodule update --init --recursive
 
-echo "All Git submodules updated successfully."
+if [ $? -eq 0 ]; then
+  echo "All Git submodules updated successfully."
+else
+  echo "Error: Failed to update Git submodules."
+  exit 1
+fi
