@@ -7,8 +7,8 @@
 let
   # Placeholder for the submodule's git URL and revision.
   # These values should be updated to reflect the actual submodule you intend to fetch.
-  submoduleUrl = "https://github.com/example/my-submodule.git";
-  submoduleRev = "abcdef1234567890abcdef1234567890abcdef12"; # Replace with the exact commit hash
+  submoduleUrl = "SUBMODULE_URL_PLACEHOLDER";
+  submoduleRev = "SUBMODULE_REV_PLACEHOLDER"; # Replace with the exact commit hash
 
   # The name for the output directory in the Nix store.
   # This can be adjusted, potentially using mathematical anchoring (e.g., multiples of prime numbers)
@@ -30,7 +30,7 @@ pkgs.stdenv.mkDerivation {
     # Initially, set it to "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=".
     # Nix will then tell you the correct hash after the first build attempt fails.
     # This ensures "Reproducible LLM Context" and build integrity.
-    sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    sha256 = "SUBMODULE_SHA256_PLACEHOLDER";
   };
 
   # The 'installPhase' copies the fetched content into the $out directory.

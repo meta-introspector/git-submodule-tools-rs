@@ -1,0 +1,1 @@
+The `runprompt2.sh` script has been updated and made executable. It now supports iterative processing of task files, incorporating a sliding window of previous responses into the `gemini-cli` prompt for each step.

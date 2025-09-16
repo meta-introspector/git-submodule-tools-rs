@@ -1,3 +1,8 @@
 targer
 target
 *.cast
+*~
+.DS_Store
+*~
+*#
+.#*
