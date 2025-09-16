@@ -61,7 +61,43 @@ echo "${SUBMODULE_INFO}" | while IFS=',' read -r submodule_name submodule_path s
     FLAKE_NIX_PATH="${SUBMODULE_FLAKES_DIR}/${submodule_name}/flake.nix"
     if [ ! -f "${FLAKE_NIX_PATH}" ]; then
         echo "Creating initial flake.nix for ${submodule_name}..."
-        cat <<EOF > "${FLAKE_NIX_PATH}"
+        SUBMODULE_FULL_PATH="${REPO_ROOT}/${submodule_path}"
+        if [ -f "${SUBMODULE_FULL_PATH}/Cargo.toml" ]; then
+            echo "Detected Rust project: ${submodule_name}. Generating Naersk flake."
+            cat <<EOF > "${FLAKE_NIX_PATH}"
+{
+  description = "Nix flake for ${submodule_name}";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+    naersk.url = "github:nix-community/naersk";
+  };
+
+  outputs = { self, nixpkgs, flake-utils, naersk } :
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = (import nixpkgs) {
+          inherit system;
+        };
+
+        naersk' = pkgs.callPackage naersk {};
+
+      in rec {
+        defaultPackage = naersk'.buildPackage {
+          src = pkgs.fetchgit {
+            url = "${submodule_url}";
+            rev = "${SUBMODULE_REV}";
+            sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Placeholder, will be updated by update_submodule_flake.sh
+          };
+        };
+      }
+    );
+}
+EOF
+        else
+            echo "Detected non-Rust project: ${submodule_name}. Generating generic flake."
+            cat <<EOF > "${FLAKE_NIX_PATH}"
 {
   description = "Nix flake for ${submodule_name}";
 
@@ -69,7 +105,7 @@ echo "${SUBMODULE_INFO}" | while IFS=',' read -r submodule_name submodule_path s
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs } :
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -77,7 +113,7 @@ echo "${SUBMODULE_INFO}" | while IFS=',' read -r submodule_name submodule_path s
       };
       submoduleUrl = "${submodule_url}";
       submoduleRev = "${SUBMODULE_REV}";
-      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Placeholder, will be updated by update_submodule_flake.sh
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         pname = "${submodule_name}";
@@ -96,6 +132,7 @@ echo "${SUBMODULE_INFO}" | while IFS=',' read -r submodule_name submodule_path s
     };
 }
 EOF
+        fi
     fi
 
     # Call the update script

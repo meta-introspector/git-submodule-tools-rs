@@ -15,15 +15,24 @@
       forAllSystems = nixpkgs.lib.genAttrs systems;
       # Create a local variable for the submoduleCheckout flake output
       submoduleFlake = submoduleCheckout;
+
+      # Function to create a reproducible Gitoxide submodule checkout
+      # submoduleUrl: URL of the Git repository
+      # submoduleRev: Revision (commit hash) of the submodule
+      mkGitoxideSubmodule = { submoduleUrl, submoduleRev }:
+        submoduleFlake.mkSubmodule {
+          submoduleUrl = submoduleUrl;
+          submoduleRev = submoduleRev;
+          submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Placeholder, will be updated by Nix
+        };
     in
     {
       packages = forAllSystems (system:
         let
           pkgs = import nixpkgs { inherit system; };
-          gitoxideCheckout = submoduleFlake.mkSubmodule { # Use the local variable here
+          gitoxideCheckout = mkGitoxideSubmodule {
             submoduleUrl = "https://github.com/GitoxideLabs/gitoxide";
             submoduleRev = "fa1026ef79ecd5b77161f1b93089c5f5a7ea0ec6";
-            submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Placeholder, will be updated by Nix
           };
           gitoxidePackage = gitoxideCheckout.packages.${system}.standalone-submodule-gitoxide;
         in

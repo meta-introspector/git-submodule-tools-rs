@@ -1,9 +1,6 @@
 [submodule "vendor/cargo_metadata"]
 	path = vendor/cargo_metadata
 	url = https://github.com/oli-obk/cargo_metadata
-[submodule "vendor/gitoxide"]
-	path = vendor/gitoxide
-	url = https://github.com/GitoxideLabs/gitoxide
 [submodule "vendor/octocrab"]
 	path = vendor/octocrab
 	url = https://github.com/XAMPPRocky/octocrab
