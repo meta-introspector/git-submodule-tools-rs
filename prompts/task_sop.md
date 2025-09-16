@@ -17,3 +17,13 @@ Review existing tasks, develop corresponding Standard Operating Procedures (SOPs
 
 *   **Divide and Conquer:** Break down complex problems into smaller, manageable parts.
 *   **Unite and Rule:** Integrate standardized components to form a cohesive and governed system.
+
+--- Appended Content from task_sop.md.out1.md ---
+I have completed the initial phase of standardizing task documentation. I have:
+
+1.  **Defined "Task Document":** Established criteria for identifying task documents within the `prompts/` directory.
+2.  **Standardized CRQ and SOP Structures:** Created clear, consistent templates for Change Requests (CRQs) and Standard Operating Procedures (SOPs) based on existing project conventions.
+3.  **Developed Task Prelude:** Designed a standard "prelude" section for task documents, including references to relevant CRQs and SOPs.
+4.  **Refactored Example Task:** Applied the new standards to `prompts/task_ainix.md`, including adding the prelude and creating a corresponding CRQ file (`CRQ_Integrate_mkAIDerivation_Git_Submodule.md`).
+
+This demonstrates the complete workflow for standardizing task documentation. I am ready for your next instruction.
