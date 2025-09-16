@@ -7,3 +7,5 @@ target
 *#
 .#*
 prompts/task_*.md.out*
+log1.txt
+shell.log
