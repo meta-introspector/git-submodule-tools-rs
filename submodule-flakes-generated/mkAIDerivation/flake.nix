@@ -12,8 +12,8 @@
         inherit system;
       };
       submoduleUrl = "https://github.com/meta-introspector/mkAIDerivation.git";
-      submoduleRev = "";
-      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      submoduleRev = "d79de32084e11e204bbe671a0005d40041a01223";
+      submoduleSha256 = "0y1h0ccf1swy5bap5vc4k14a08cbhbzs9py36jgfqr80425zvz5l";
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         pname = "mkAIDerivation";

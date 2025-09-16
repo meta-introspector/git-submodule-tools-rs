@@ -1,0 +1,43 @@
+name: Automated Submodule Update Check
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  check-and-update-submodules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+        token: ${{ secrets.GH_PAT }} # Personal Access Token with repo write access
+        submodules: true # Checkout submodules
+
+    - name: Update Submodules to Latest Upstream
+      run: |
+        git submodule update --init --recursive --remote
+
+    - name: Check for Submodule Changes
+      id: check_changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git diff --staged --quiet || echo "::set-output name=changes_detected::true"
+
+    - name: Create Pull Request if Changes Detected
+      if: steps.check_changes.outputs.changes_detected == 'true'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GH_PAT }}
+        commit-message: "chore: Automated submodule update"
+        title: "Automated Submodule Update"
+        body: "This PR updates submodules to their latest upstream commits."
+        branch: "automated-submodule-update"
+        base: "main" # Or your default branch

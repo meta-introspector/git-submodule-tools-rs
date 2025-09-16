@@ -12,8 +12,8 @@
         inherit system;
       };
       submoduleUrl = "https://github.com/meta-introspector/meta-meme.wiki.git";
-      submoduleRev = "";
-      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      submoduleRev = "c5ca5fb4782458ca5d3d550acb8d25733cff6263";
+      submoduleSha256 = "02d0sfl2aih22kyys719ix5n8389jgidwji5p31dy4vs4nc49swi";
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         pname = "meta-meme.wiki";

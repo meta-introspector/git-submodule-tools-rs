@@ -12,8 +12,8 @@
         inherit system;
       };
       submoduleUrl = "https://github.com/XAMPPRocky/octocrab";
-      submoduleRev = "";
-      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      submoduleRev = "1ca87c2b0a0bfcf4fd5f7fd14f29f65883b225f0";
+      submoduleSha256 = "0k1ca2bfnaciwg00z0hqqhg4856bz8yzyq9qy0s8v6sxqf4n55zf";
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         pname = "octocrab";

@@ -12,8 +12,8 @@
         inherit system;
       };
       submoduleUrl = "https://github.com/oli-obk/cargo_metadata";
-      submoduleRev = "";
-      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      submoduleRev = "f0df5d0d220c0625cfa1a624ae7cc3d3ac25e31f";
+      submoduleSha256 = "0llrrbzqy2yj2ihzb648hxybbl3z6idfa8r781dfnc9rwl475ihh";
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         pname = "cargo_metadata";

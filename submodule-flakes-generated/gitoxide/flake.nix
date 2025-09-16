@@ -12,8 +12,8 @@
         inherit system;
       };
       submoduleUrl = "https://github.com/GitoxideLabs/gitoxide";
-      submoduleRev = "";
-      submoduleSha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      submoduleRev = "fa1026ef79ecd5b77161f1b93089c5f5a7ea0ec6";
+      submoduleSha256 = "1ypd7yr3xnka4sigjx6vmms5n6wdgdafmy90dfsr2bxr84ik12qd";
     in {
       packages.${system}.default = pkgs.stdenv.mkDerivation {
         pname = "gitoxide";
