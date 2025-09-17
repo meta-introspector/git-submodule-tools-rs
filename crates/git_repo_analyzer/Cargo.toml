@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gix-config = { path = "../../vendor/gitoxide/gix-config" }
-gix-url = { path = "../../vendor/gitoxide/gix-url" }
-gix-discover = { path = "../../vendor/gitoxide/gix-discover" }
+gix-config = "0.46.0"
+gix-url = "0.32.0"
+gix-discover = "0.41.0"
 bstr = "1.9.0"
 
 [dev-dependencies]

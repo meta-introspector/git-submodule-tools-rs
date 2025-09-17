@@ -4,6 +4,6 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gix = { path = "../../vendor/gitoxide/gix" }
+gix = "0.73.0"
 tempfile = "3.10.1"
 asciicast = { version = "0.2.2" }

@@ -1,3 +1,11 @@
 targer
 target
 *.cast
+*~
+.DS_Store
+*~
+*#
+.#*
+prompts/task_*.md.out*
+log1.txt
+shell.log
