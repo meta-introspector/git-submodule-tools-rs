@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$(dirname "$0")"/../../scripts/lib_git_submodule.sh
+
 # boot.sh
 # This script demonstrates how a Gemini agent can claim a task.
 
@@ -26,8 +28,8 @@ else
     echo "Task ${TASK_ID} claimed by ${AGENT_ID}."
     echo "Please review the changes and commit them:"
     echo "  git add ${UNCLAIMED_TASK_FILE}"
-    echo "  git commit -m \"Claimed task ${TASK_ID} - Started work\""
+    git_commit_message "Claimed task ${TASK_ID} - Started work"
 
     # Display git status to show the change
-    git status
+    git_status_submodule
 fi

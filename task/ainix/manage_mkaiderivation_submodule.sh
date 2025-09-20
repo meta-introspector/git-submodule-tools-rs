@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+source "$(dirname "$0")"/../../../scripts/lib_git_submodule.sh
+
 #
 # Script to manage the mkAIDerivation Git submodule (initialize and update).
 #
@@ -76,11 +79,11 @@ cd "${PROJECT_ROOT}" || log_error "Failed to navigate to project root."
 
 # Initialize and update the specific submodule
 log_info "Initializing and updating mkAIDerivation submodule..."
-run_command git submodule update --init --recursive "${SUBMODULE_PATH}"
+run_command git_submodule_update_init_recursive "${SUBMODULE_PATH}"
 
 # Verify submodule status
 log_info "Verifying mkAIDerivation submodule status..."
-run_command git submodule status "${SUBMODULE_PATH}"
+run_command git_submodule_status "${SUBMODULE_PATH}"
 
 log_info "mkAIDerivation submodule management script finished."
 
