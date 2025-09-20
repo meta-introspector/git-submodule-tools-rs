@@ -2,7 +2,7 @@
   description = "Nix flake for octocrab";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:meta-introspector/nixpkgs?ref=feature/CRQ-016-nixify";
   };
 
   outputs = { self, nixpkgs }:

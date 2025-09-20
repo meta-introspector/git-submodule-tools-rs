@@ -2,7 +2,7 @@
   description = "Nix flake for vendor_meta_introspector_meta_meme_wiki";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11"; # Pin to a stable NixOS version
+    nixpkgs.url = "github:meta-introspector/nixpkgs?ref=feature/CRQ-016-nixify"; # Pin to a stable NixOS version
   };
 
   outputs = { self, nixpkgs }:

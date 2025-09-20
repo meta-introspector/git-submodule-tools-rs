@@ -2,7 +2,7 @@
   description = "Nix flake for a standalone git checkout of a submodule, with URL, revision, and SHA256 configurable via the mkSubmodule function, adhering to operational principles.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11"; # Using a stable Nixpkgs branch
+    nixpkgs.url = "github:meta-introspector/nixpkgs?ref=feature/CRQ-016-nixify"; # Using a stable Nixpkgs branch
   };
 
   outputs = { self, nixpkgs } :

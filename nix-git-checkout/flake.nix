@@ -2,7 +2,7 @@
   description = "Reproducible Git checkout of gitoxide submodule";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:meta-introspector/nixpkgs?ref=feature/CRQ-016-nixify";
     submoduleCheckout = {
       url = "path:/data/data/com.termux.nix/files/home/pick-up-nix2/source/github/meta-introspector/git-submodule-tools-rs/submodule-checkout";
       follows = "nixpkgs";

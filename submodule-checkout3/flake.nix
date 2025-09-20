@@ -2,7 +2,7 @@
   description = "A Nix flake for checking out a Git submodule";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11"; # Pinning nixpkgs for reproducibility
+    nixpkgs.url = "github:meta-introspector/nixpkgs?ref=feature/CRQ-016-nixify"; # Pinning nixpkgs for reproducibility
   };
 
   outputs = { self, nixpkgs }:
